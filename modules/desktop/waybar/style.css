@@ -1,0 +1,123 @@
+/* Floating-block layout adapted from https://github.com/mogura1n/waybar. */
+@import url("font.css");
+@import url("colors.css");
+
+* {
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    color: @foreground;
+    background: transparent;
+}
+
+window#waybar > box {
+    /* Match Mango's 10px outer gap. Mango supplies the gap below the bar. */
+    margin: 10px 0 0;
+    padding: 0 4px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0 3px;
+}
+
+#custom-launcher,
+#workspaces,
+#cpu,
+#memory,
+#custom-window,
+#tray,
+#wireplumber,
+#network,
+#bluetooth,
+#backlight,
+#custom-platform-profile,
+#idle_inhibitor,
+#clock,
+#battery,
+#custom-power {
+    background: @background;
+    border-radius: 4px;
+    padding: 8px 15px 8px 10px;
+    margin: 0;
+}
+
+#workspaces {
+    padding: 4px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 0 1px;
+    color: @foreground-inactive;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 3px;
+}
+
+#workspaces button.active {
+    color: @accent;
+}
+
+#workspaces button.urgent {
+    color: @urgent;
+}
+
+#workspaces button:hover {
+    background: @surface;
+    color: @foreground;
+}
+
+#custom-launcher,
+#clock,
+#idle_inhibitor.activated {
+    color: @accent;
+}
+
+#cpu,
+#memory,
+#wireplumber {
+    color: @accent;
+}
+
+#custom-window {
+    padding: 8px 12px;
+}
+
+#custom-window.empty {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+#tray {
+    padding: 8px 12px;
+}
+
+#wireplumber.muted,
+#network.disconnected,
+#battery.warning:not(.charging):not(.plugged) {
+    color: @urgent;
+}
+
+#battery.critical:not(.charging):not(.plugged) {
+    color: @background;
+    background: @urgent;
+}
+
+#custom-power {
+    color: @urgent;
+}
+
+tooltip {
+    background: @background;
+    color: @foreground;
+    border: 1px solid @surface;
+    border-radius: 4px;
+}

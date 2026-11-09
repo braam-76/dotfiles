@@ -1,0 +1,25 @@
+# Base16 adaptation of Foxglove Dark (Linen paper, default Lapis inks).
+# Source: https://gitlab.com/vegasharmon/foxglove-themes
+# Colors come from foxglove-themes.el: linen-dark, dark hues, lapis-dark.
+# Base16 cannot reproduce Emacs-specific face roles or typography exactly.
+system: "base16"
+name: "Foxglove Dark"
+author: "vegasharmon (original Foxglove theme)"
+variant: "dark"
+palette:
+  base00: "22211f" # Main background
+  base01: "2a2a28" # Dim background
+  base02: "40403d" # Active background / selection
+  base03: "737270" # Dim foreground / comments
+  base04: "a6a5a3" # Alternate foreground
+  base05: "d2d2cf" # Main foreground
+  base06: "d2d2cf" # Preserve the original foreground instead of inventing brighter inks
+  base07: "d2d2cf"
+  base08: "e78d86" # Red
+  base09: "e49073" # Rust
+  base0A: "cb9e5c" # Ochre / yellow
+  base0B: "db919d" # Foxglove plum (strings)
+  base0C: "6fb0bf" # Cyan
+  base0D: "98bdfe" # Lapis (functions / links)
+  base0E: "d392b6" # Magenta
+  base0F: "878f70" # Leaf sage

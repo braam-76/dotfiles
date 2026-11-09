@@ -1,0 +1,25 @@
+# Track configuration explicitly; ignore runtime data and credentials by default.
+/*
+!/.gitignore
+!/README.md
+!/skill-snapshots/
+!/agent/
+/agent/*
+!/agent/settings.json
+!/agent/extensions/
+!/agent/themes/
+!/agent/skills/
+!/agent/tests/
+!/agent/CLAUDE-HERDR-SETUP.md
+!/agent/npm/
+/agent/npm/*
+!/agent/npm/package.json
+!/agent/npm/.gitignore
+
+# Never commit credentials, environment files, or dependencies.
+**/auth.json
+**/.env
+**/.env.*
+**/node_modules/
+**/*.pem
+**/*.key

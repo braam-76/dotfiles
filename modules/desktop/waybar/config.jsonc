@@ -1,0 +1,107 @@
+// Layout adapted from https://github.com/mogura1n/waybar (oishi-waybar).
+// Mango workspaces/window title; colors and font come from Stylix.
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 5,
+    "modules-left": ["custom/launcher", "ext/workspaces", "cpu", "memory", "custom/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "wireplumber", "network", "backlight", "custom/platform-profile", "idle_inhibitor", "battery", "custom/power"],
+
+    "custom/launcher": {
+        "format": "",
+        "tooltip-format": "Application launcher",
+        "on-click": "fuzzel"
+    },
+    "ext/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-name": true
+    },
+    "custom/window": {
+        "exec": "python3 $HOME/.config/waybar/mango.py window",
+        "return-type": "json",
+        "restart-interval": 2,
+        "max-length": 32,
+        "escape": true,
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 2,
+        "format": "CPU {usage:>2}%",
+        "on-click": "alacritty -e btop"
+    },
+    "memory": {
+        "interval": 10,
+        "format": "MEM {used:0.1f}G",
+        "tooltip-format": "{used:0.1f} / {total:0.1f} GiB",
+        "on-click": "alacritty -e btop"
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 7
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰖁",
+        "format-icons": ["", "󰕾"],
+        "max-volume": 100,
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname}: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor"
+    },
+    "backlight": {
+        "format": "{percent}% 󰃠",
+        "tooltip-format": "Brightness: {percent}%",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+    "custom/platform-profile": {
+        "format": "{icon}",
+        "exec-if": "test -r /sys/firmware/acpi/platform_profile",
+        "exec": "sh $HOME/.config/waybar/platform_profile.sh",
+        "return-type": "json",
+        "interval": 5,
+        "format-icons": {
+            "quiet": "󰌪",
+            "balanced": "󰈐",
+            "performance": "",
+            "default": "?"
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {"activated": "󰅶", "deactivated": "󰾪"},
+        "tooltip-format-activated": "Keep awake: on",
+        "tooltip-format-deactivated": "Keep awake: off"
+    },
+    "clock": {
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%d.%m.%Y %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "battery": {
+        "interval": 30,
+        "states": {"warning": 30, "critical": 15},
+        "format": "{capacity}% {icon}",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": "󰁹 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip-format": "Power menu",
+        "on-click": "python3 $HOME/.config/waybar/mango.py power"
+    }
+}
