@@ -9,12 +9,6 @@
 !/agent/extensions/
 !/agent/themes/
 !/agent/skills/
-!/agent/tests/
-!/agent/CLAUDE-HERDR-SETUP.md
-!/agent/npm/
-/agent/npm/*
-!/agent/npm/package.json
-!/agent/npm/.gitignore
 
 # Never commit credentials, environment files, or dependencies.
 **/auth.json
