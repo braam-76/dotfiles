@@ -32,7 +32,7 @@
       isNormalUser = true;
       description = "Ilgar Gamidov";
       extraGroups = [ "networkmanager" "wheel" ];
-      shell = pkgs.zsh;
+      shell = pkgs.fish;
       packages = with pkgs; [
         codex
       ];

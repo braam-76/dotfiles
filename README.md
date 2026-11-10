@@ -47,9 +47,10 @@ snr-update  # sudo nixos-rebuild switch --flake ~/dotfiles --impure --update
     │       └── style.css             # Bar styling
     ├── cli-tools/
     │   ├── default.nix               # CLI module imports, wget, curl and btop
+    │   ├── fish/default.nix          # Default shell and aliases
     │   ├── git/default.nix           # Git and user identity
     │   ├── yazi/default.nix          # Yazi file manager and Zoxide integration
-    │   └── zsh/default.nix           # Shell, aliases and history
+    │   └── zsh/default.nix           # Optional shell, aliases and history
     ├── development/
     │   ├── default.nix               # Development module imports
     │   ├── languages/default.nix     # Languages, LSP servers and formatters
