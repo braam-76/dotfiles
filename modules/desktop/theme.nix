@@ -34,6 +34,11 @@
       kde.enable = true;
       mako.enable = true;
       neovim.enable = true;
+      hyprlock = {
+        enable = true;
+        # Use Mango's wallpaper rather than Stylix's generated image.
+        image.enable = false;
+      };
       vscode.enable = true;
       # Mango and Waybar use small adapters in their own modules, keeping
       # the main config.conf and style.css editable through live links.

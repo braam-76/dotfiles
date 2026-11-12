@@ -1,0 +1,59 @@
+/* Omarchy-inspired Walker picker; colors are generated from Stylix. */
+* {
+  all: unset;
+  font-family: monospace;
+  font-size: 16px;
+  color: @text;
+}
+
+scrollbar { opacity: 0; }
+.normal-icons { -gtk-icon-size: 24px; }
+.large-icons { -gtk-icon-size: 48px; }
+
+.box-wrapper {
+  background: alpha(@base, 0.97);
+  border: 2px solid @accent;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 36px alpha(black, 0.35);
+}
+
+.search-container {
+  background: @surface;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.input { caret-color: @accent; }
+.input placeholder { color: @muted; }
+.input selection { background: alpha(@accent, 0.3); }
+
+.item-box {
+  border-radius: 8px;
+  padding: 12px;
+}
+child:selected .item-box,
+row:selected .item-box { background: alpha(@accent, 0.18); }
+child:hover .item-box { background: alpha(@accent, 0.1); }
+.item-image { margin-right: 14px; }
+.item-text-box { padding: 2px 0; }
+.item-subtext { font-size: 12px; color: @muted; }
+
+.preview {
+  background: @surface;
+  border: 1px solid alpha(@accent, 0.25);
+  border-radius: 10px;
+  padding: 12px;
+}
+.preview .large-icons { -gtk-icon-size: 96px; }
+.placeholder, .elephant-hint { color: @muted; padding: 24px; }
+
+.keybinds {
+  border-top: 1px solid alpha(@accent, 0.2);
+  padding-top: 12px;
+  font-size: 12px;
+}
+.keybind-bind { color: @accent; }
+.keybind-label { padding: 2px 6px; color: @muted; }
+.keybind { margin-right: 8px; }
+.error { background: alpha(@error, 0.2); padding: 12px; border-radius: 8px; }
+popover { background: @surface; border: 1px solid @accent; border-radius: 10px; padding: 10px; }
