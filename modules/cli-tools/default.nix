@@ -5,6 +5,7 @@
       fish
       git
       yazi
+      tmux
     ];
 
     home-manager.users.braam.programs.starship = {
